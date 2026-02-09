@@ -1,0 +1,10 @@
+pymysql
+cryptography
+django
+djangorestframework
+django-cors-headers
+django-filter
+djangorestframework-simplejwt
+python-dotenv
+cloudinary
+django-cloudinary-storage

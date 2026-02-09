@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+__MACOSX/
+Thumbs.db
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Django
+db.sqlite3
+staticfiles/
+
+# Node
+node_modules/

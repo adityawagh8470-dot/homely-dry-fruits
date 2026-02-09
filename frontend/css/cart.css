@@ -1,0 +1,161 @@
+/* =====================
+   ROOT COLORS
+===================== */
+:root {
+  --primary: #7a4a12;
+  --accent: #ffb347;
+  --bg-light: #f8f5f3;
+  --white: #ffffff;
+}
+
+/* =====================
+   RESET & LAYOUT
+===================== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-light);
+  font-family: Arial, sans-serif;
+}
+
+/* =====================
+   NAVBAR PLACEHOLDER
+===================== */
+#navbar {
+  flex-shrink: 0;
+}
+
+/* =====================
+   MAIN CONTENT (KEY FIX)
+===================== */
+.page-content {
+  flex: 1;                 /* 🔥 pushes footer down */
+  width: 100%;
+}
+
+/* =====================
+   CART CONTAINER
+===================== */
+.container {
+  max-width: 900px;
+}
+
+/* =====================
+   CART ITEMS
+===================== */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--white);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-details h5 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.cart-details p {
+  margin: 4px 0;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.remove-btn {
+  border: none;
+  background: #dc3545;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* =====================
+   EMPTY CART
+===================== */
+#cart-items:empty::after {
+  content: "Your cart is empty";
+  display: block;
+  text-align: center;
+  padding: 60px 0;
+  font-size: 18px;
+  color: #555;
+}
+
+/* =====================
+   CART SUMMARY
+===================== */
+h4 {
+  font-weight: bold;
+}
+
+/* =====================
+   FOOTER PLACEHOLDER
+===================== */
+#footer {
+  flex-shrink: 0;
+}
+
+/* =====================
+   FOOTER STYLE
+===================== */
+footer {
+  background: linear-gradient(to right, #4b2c0b, #2c1606);
+  color: white;
+  padding: 30px 0;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #d6c3a5;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 10px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
