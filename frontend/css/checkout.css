@@ -56,21 +56,7 @@ h5 {
   margin-bottom: 15px;
 }
 
-/* =========================
-   BACK BUTTON
-========================= */
-.back-btn {
-  display: inline-block;
-  margin-bottom: 15px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  color: #000;
-}
 
-.back-btn:hover {
-  text-decoration: underline;
-}
 
 /* =========================
    FORM INPUTS

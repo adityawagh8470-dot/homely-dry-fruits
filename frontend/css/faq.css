@@ -86,7 +86,7 @@ body {
 
 /* FAQ Card */
 .faq {
-  background-color: tan;
+  background-color:#1a5c5e;
   padding: 20px 25px;
   border-radius: 10px;
   margin-bottom: 18px;
@@ -102,13 +102,13 @@ body {
 
 .faq h3 {
   font-size: 1.1rem;
-  color: #333;
+  color:white;
   margin-bottom: 10px;
 }
 
 .faq p {
   font-size: 0.95rem;
-  color: #555;
+  color:white;
 }
 
 /* =====================

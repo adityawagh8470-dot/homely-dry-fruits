@@ -1,319 +1,1446 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homely Dry Fruits</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo.png/logo.png">
-  <link rel="stylesheet" href="./css/footer.css">
-   <link rel="stylesheet" href="./css/home.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Homely | Premium Dry Fruits & Nuts | Online Store</title>
+  <link rel="icon" type="image/png" sizes="35x35" href="./assets/logo.png/mainlogo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/chatbot.css" />
 </head>
+
 <body>
 
-<!--1 HEADER-->
-
-<nav class="navbar">
-  <div class="nav-left">
-    <h2><b>Homely</b></h2>
+  <!-- ============ ANNOUNCEMENT BAR ============ -->
+  <div class="announcement-bar">
+    <div class="announcement-track">
+      <span>🎉 Get 10% Discount on Purchase of ₹899 and Above With Code "SECRET" &nbsp; ◆ &nbsp;</span>
+      <span>🚚 Free Delivery on Orders Above ₹500 &nbsp; ◆ &nbsp;</span>
+      <span>🌿 100% Natural & Fresh Dry Fruits &nbsp; ◆ &nbsp;</span>
+      <span>🎉 Get 10% Discount on Purchase of ₹899 and Above With Code "SECRET" &nbsp; ◆ &nbsp;</span>
+      <span>🚚 Free Delivery on Orders Above ₹500 &nbsp; ◆ &nbsp;</span>
+      <span>🌿 100% Natural & Fresh Dry Fruits &nbsp; ◆ &nbsp;</span>
+    </div>
   </div>
 
-  <!-- 2 Search fruits-->
-   <div class="nav-center">
-    <input type="text" id="searchInput" placeholder="Search dry fruits...">
-   </div>
-
-   <!-- 3 right element login & logout buttons-->
-
-   <div class="nav-right">
-   <button class="nav-btn login-btn" onclick="window.location.href='login.html'">Login / Signup</button>
+  <!-- NAVIGATION BAR  -->
+  <nav class="navbar" id="navbar">
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-     <!--right Cart icon and cart count-->
 
-   <div class="cart-container">
-  <a href="cart.html" class="cart-link">
-    <i class="fa fa-shopping-cart" id="cart-icon"></i>  
-    <span id="cart-count">0</span>
-  </a>
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="./assets/logo/mainlogo.png" alt="Homely Logo" class="logo-img">
+      <span class="logo-text">Homely</span>
+    </a>
+
+    <!-- Nav Links (Desktop) -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#bestsellers">Bestsellers</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#products-section">All Products</a></li>
+      <li><a href="franchiseopportunities.html">Franchise</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+    </ul>
+
+    <!-- Search -->
+    <div class="nav-search">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="searchInput" placeholder="What are you looking for?">
+    </div>
+
+    <!-- Right Icons -->
+    <div class="nav-actions">
+      <a href="login.html" class="nav-action-btn" title="Account">
+        <i class="fa-regular fa-user"></i>
+      </a>
+      <a href="cart.html" class="nav-action-btn cart-btn" title="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge" id="cart-count">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- MOBILE SIDEBAR -->
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="./assets/logo/mainlogo.png" alt="Homely" class="sidebar-logo">
+      <span class="close-btn" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></span>
+    </div>
+    <div class="sidebar-links">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="#bestsellers"><i class="fa-solid fa-fire"></i> Bestsellers</a>
+      <a href="#categories"><i class="fa-solid fa-grid"></i> Categories</a>
+      <a href="#products-section"><i class="fa-solid fa-leaf"></i> All Products</a>
+      <a href="franchiseopportunities.html"><i class="fa-solid fa-handshake"></i> Franchise</a>
+      <a href="about-us.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+      <a href="login.html"><i class="fa-regular fa-user"></i> Login / Sign Up</a>
+      <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i> My Cart</a>
+      <a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+    </div>
   </div>
-    </nav>
-<!-- main content placeholder -->
 
-      <main class="content">
-      <h1>Premium Dry Fruits & Nuts</h1>
-      <p class="tagline"> • Fresh • Healthy • Natural</p>
-      </main>
+  <!--nav bar end -->
 
- <!--products and product-grid-->
-   <section class="products">
-    <div class="product-grid">
+  <!-- ============ HERO BANNER SLIDER ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-slider">
+      <!-- Slide 1 -->
+      <div class="hero-slide active" style="background: linear-gradient(135deg, #1a5c5e 0%, #0d3d3e 100%);">
+        <div class="hero-content">
+          <span class="hero-badge">✨ Premium Collection</span>
+          <h1 class="hero-title">Premium<br>Dry Fruits</h1>
+          <p class="hero-subtitle">Nature's Finest, Delivered Fresh to Your Doorstep</p>
+          <div class="hero-features">
+            <span><i class="fa-solid fa-leaf"></i> 100% Natural</span>
+            <span><i class="fa-solid fa-shield-halved"></i> No Additives</span>
+          </div>
+          <a href="#products-section" class="hero-cta">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+          <img src="./assets/images/almonds.jpg" alt="Premium Almonds">
+        </div>
+      </div>
 
-      <!-- 1 Almonds-->
+      <!-- Slide 2 -->
+      <div class="hero-slide" style="background: linear-gradient(135deg, #6b2d5b 0%, #3d1a35 100%);">
+        <div class="hero-content">
+          <span class="hero-badge">🔥 Bestseller</span>
+          <h1 class="hero-title">Roasted<br>Makhana</h1>
+          <p class="hero-subtitle">Crunchy, Healthy & Irresistibly Delicious Snacks</p>
+          <div class="hero-features">
+            <span><i class="fa-solid fa-fire"></i> Roasted Fresh</span>
+            <span><i class="fa-solid fa-heart"></i> Healthy Snack</span>
+          </div>
+          <a href="#products-section" class="hero-cta">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+          <img src="./assets/images/makhana.jpg" alt="Roasted Makhana">
+        </div>
+      </div>
 
-    <div class="product-card">
-      <img src="./assets/images/Almonds.jpg">
-      <h3 class="product-name">Almonds</h3>
-      <p class="price">₹400/ 500g</p>
-      <button class="add-to-cart"
-    data-name="Almonds"
-    data-price="400">Add to Cart</button>
-       </div>
-
-       <!-- 2 cashews-->
-
-    <div class="product-card">
-      <img src="./assets/images/Cashews.jpg">
-      <h3 class="product-name">Cashews</h3>
-      <p class="price">₹820 / 500g</p>
-       <button class="add-to-cart"
-        data-name="Cashews"
-        data-price="820">Add to Cart</button>
-    </div>
-
-    <!-- 3 raisins-->
-
-    <div class="product-card">
-      <img src="./assets/images/Raisins.jpg">
-      <h3 class="product-name">Raisins</h3>
-      <p class="price">₹420 / 500g</p>
-       <button class="add-to-cart"
-        data-name="Raisins"
-        data-price="420">Add to Cart</button>
-    </div>
-
-    <!--4 pistachios-->
-
-    <div class="product-card">
-      <img src="./assets/images/Pistachios.jpg">
-      <h3 class="product-name">Pistachios</h3>
-      <p class="price">₹980 / 500g</p>
-       <button class="add-to-cart"
-        data-name="Pistachios"
-        data-price="980">Add to Cart</button>
-    </div>
-
-
-    <!-- 5 walnuts-->
-    <div class="product-card">
-      <img src="./assets/images/Walnuts.jpg">
-      <h3 class="product-name">Walnuts</h3>
-      <p class="price">₹680 / 500g</p>
-       <button class="add-to-cart"
-        data-name="Walnuts"
-        data-price="680">Add to Cart</button>
-    </div>
-
-   <!-- 6 dried figs-->
-
-    <div class="product-card">
-      <img src="./assets/images/Driedfigs.jpg">
-      <h3 class="product-name">Dried Figs</h3>
-      <p class="price">₹900 / 500g</p>
-      <button class="add-to-cart"
-        data-name="Dried Figs"
-        data-price="900">Add to Cart</button>
-    </div>
-
-    <!-- 7 dates-->
-
-    <div class="product-card">
-      <img src="./assets/images/Dates.jpg">
-      <h3 class="product-name">Dates</h3>
-      <p class="price">₹350 / 500g</p>
-      <button class="add-to-cart"
-        data-name="Dates"
-        data-price="350">Add to Cart</button>
-    </div>
-
-    <!--8 apricots-->
-
-    <div class="product-card">
-      <img src="./assets/images/Apricots.jpg">
-      <h3 class="product-name">Apricots</h3>
-      <p class="price">₹850 / 500g</p>
-       <button class="add-to-cart"
-        data-name="Apricots"
-        data-price="850">Add to Cart</button>
-    </div>
-
-    <!-- 9 black raisins-->
-
-    <div class="product-card">
-      <img src="./assets/images/Black Raisins.jpg">
-      <h3 class="product-name">black Raisins</h3>
-      <p class="price">₹480 / 500g</p>
-     <button class="add-to-cart"
-        data-name="Raisins"
-        data-price="480">Add to Cart</button>
-    </div>
-
-    <!--10 cranberries-->
-
-    <div class="product-card">
-      <img src="./assets/images/Cranberries.jpg">
-      <h3 class="product-name">Cranberries</h3>
-      <p class="price">₹620 / 500g</p>
-      <button class="add-to-cart"
-        data-name="Cranberries"
-        data-price="620">Add to Cart</button>
-    </div>
-
-    <!--11 peanuts-->
-
-    <div class="product-card">
-      <img src="./assets/images/Peanuts.jpg">
-      <h3 class="product-name">Peanuts</h3>
-      <p class="price">₹220 / 500g</p>
-      <button class="add-to-cart"
-        data-name="Peanuts"
-        data-price="220">Add to Cart</button>
-    </div>
-
-    <!--12 hazelnuts-->
-
-    <div class="product-card">
-      <img src="./assets/images/Hazelnuts.jpg">
-      <h3 class="product-name">Hazelnuts</h3>
-      <p class="price">₹1100 / 500g</p>
-      <button class="add-to-cart"
-        data-name="Hazelnuts"
-        data-price="1100">Add to Cart</button>
-    </div>
-
-    <!--13 macadamia nuts -->
-
-    <div class="product-card">
-      <img src="./assets/images/MacadamiaNuts.jpg">
-      <h3 class="product-name">Macadamia Nuts</h3>
-      <p class="price">₹1400 / 500g</p>
-       <button class="add-to-cart"
-        data-name="Macadamia Nuts"
-        data-price="1400">Add to Cart</button>
-    </div>
-
-    <!--14 pine nuts -->
-
-    <div class="product-card">
-      <img src="./assets/images/PineNuts.jpg">
-      <h3 class="product-name">Pine Nuts</h3>
-      <p class="price">₹1600 / 500g</p>
-     <button class="add-to-cart"
-        data-name="Pine-Nuts"
-        data-price="1600">Add to Cart</button>
-    </div>
-
-    <!-- 15 chia seeds -->
-
-    <div class="product-card">
-      <img src="./assets/images/ChiaSeeds.jpg">
-      <h3 class="product-name">Chia Seeds</h3>
-      <p class="price">₹320 / 500g</p>
-       <button class="add-to-cart"
-        data-name="Chia Seeds"
-        data-price="320">Add to Cart</button>
-    </div>
-
-    <!--16 flex seeds -->
-
-    <div class="product-card">
-      <img src="./assets/images/FlaxSeeds.jpg">
-      <h3 class="product-name">Flax Seeds</h3>
-      <p class="price">₹280 / 500g</p>
-     <button class="add-to-cart"
-        data-name="Flax Seeds"
-        data-price="280">Add to Cart</button>
-    </div>
-
-    <!--17 pumpkin seeds-->
-
-    <div class="product-card">
-      <img src="./assets/images/PumpkinSeeds.jpg">
-      <h3 class="product-name">Pumpkin Seeds</h3>
-      <p class="price">₹420 / 500g</p>
-      <button class="add-to-cart"
-        data-name="Pumpkin Seeds"
-        data-price="420">Add to Cart</button>
-    </div>
-
-    <!--18 sunflower seeds -->
-
-    <div class="product-card">
-      <img src="./assets/images/Sunflowerseeds.jpg">
-      <h3 class="product-name">Sunflower Seeds</h3>
-      <p class="price">₹300 / 500g</p>
-      <button class="add-to-cart"
-        data-name="Sunflower-seeds"
-        data-price="300">Add to Cart</button>
-    </div>
-
-   <!--19 makhana-->
-
-    <div class="product-card">
-      <img src="./assets/images/Makhana.jpg">
-      <h3 class="product-name">Makhana</h3>
-      <p class="price">₹520 / 500g</p>
-      <button class="add-to-cart"
-        data-name="Makhana"
-        data-price="520">Add to Cart</button>
-    </div>
-
-    <!--20 roasted foxnuts-->
-
-    <div class="product-card">
-      <img src="./assets/images/RoastedFoxnuts.jpg">
-      <h3 class="product-name">Roasted Foxnuts</h3>
-      <p class="price">₹580 / 500g</p>
-      <button class="add-to-cart"
-        data-name="Roasted-Foxnuts"
-        data-price="580">Add to Cart</button>
-    </div>
-
-  </div>
-</section>
-
-<!-- Footer Section-->
-<footer class="footer">
-  <div class="footer-container">
-    <!-- Left Section logo -->
-    <div class="footer-section">
-      <div class="logo">
-        <img src="./assets/logo.png/logo.png" alt="">
+      <!-- Slide 3 -->
+      <div class="hero-slide" style="background: linear-gradient(135deg, #c7842b 0%, #8b5a1b 100%);">
+        <div class="hero-content">
+          <span class="hero-badge">🌿 New Arrival</span>
+          <h1 class="hero-title">Seeds &<br>Berries</h1>
+          <p class="hero-subtitle">Superfood Power Packed with Essential Nutrients</p>
+          <div class="hero-features">
+            <span><i class="fa-solid fa-bolt"></i> Superfoods</span>
+            <span><i class="fa-solid fa-seedling"></i> Farm Fresh</span>
+          </div>
+          <a href="#products-section" class="hero-cta">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+          <img src="./assets/images/ChiaSeeds.jpg" alt="Chia Seeds">
+        </div>
       </div>
     </div>
 
-    <!-- Quick Links -->
-   <div class="footer-section">
-   <h4>Quick Links</h4>
-   <ul>
-    <li><a href="about-us.html">About Homely</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-  </ul>
-   </div>
+    <!-- Slider Dots -->
+    <div class="hero-dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+    </div>
 
-    <!-- Contact -->
-     <div class="footer-section">
-     <h4>Contact Us</h4>
-     <p>📞<a href="tel:+918007089092">8007089092</a></p>
-     <p>✉️<a href="mailto:homely@gmail.com">homely@gmail.com</a></p>
-     </div>
+    <!-- Slider Arrows -->
+    <button class="hero-arrow hero-prev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="hero-arrow hero-next" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+  </section>
 
-     <!-- Address -->
-     <div class="footer-section">
-      <h4>Shop Address</h4>
-      <p>Homely Dry Fruits,<br>MG Road,Andheri East Mumbai- 400069.</p>
+  <!-- ============ SHOP BY CATEGORY ============ -->
+  <section class="categories" id="categories">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">Explore</span>
+        <h2 class="section-title">Shop By Category</h2>
+        <p class="section-desc">Discover our wide range of premium dry fruits, nuts, seeds & more</p>
+      </div>
+      <div class="category-grid reveal">
+        <a href="#products-section1" class="category-card" style="--accent: #e8a849;">
+          <div class="category-icon">🥜</div>
+          <h3>Dry Fruits</h3>
+          <p>Raisins,Dried Figs,Dats & more</p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="#products-section2" class="category-card" style="--accent: #45a67f;">
+          <div class="category-icon">🌰</div>
+          <h3>Premium Nuts</h3>
+          <p>Almonds,Aleshews,Walnuts & more </p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="#products-section3" class="category-card" style="--accent: #4a90d9;">
+          <div class="category-icon">🌱</div>
+          <h3>Premium Seeds</h3>
+          <p>Chia, Flax, Pumpkin, Sunflower & more </p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BESTSELLERS ============ -->
+  <section class="bestsellers" id="bestsellers">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">🔥 Trending</span>
+        <h2 class="section-title">Bestsellers</h2>
+        <p class="section-desc">Our most loved products — handpicked for you</p>
+      </div>
+      <div class="bestseller-grid reveal">
+        <!-- Bestseller 1 -->
+        <div class="product-card featured">
+          <div class="product-badge">Bestseller</div>
+          <div class="product-img-wrap">
+            <img src="./assets/images/Almonds.jpg" alt="Almonds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Premium Almonds</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+              <span>(4.5)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="price">₹400</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Almonds" data-price="400">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+        <!-- Bestseller 2 -->
+        <div class="product-card featured">
+          <div class="product-badge hot">Hot</div>
+          <div class="product-img-wrap">
+            <img src="./assets/images/Cashews.jpg" alt="Cashews">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cashews</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span>(5.0)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="price">₹820</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Cashews" data-price="820">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+        <!-- Bestseller 3 -->
+        <div class="product-card featured">
+          <div class="product-badge new">New</div>
+          <div class="product-img-wrap">
+            <img src="./assets/images/Pistachios.jpg" alt="Pistachios">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pistachios</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              <span>(4.0)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="price">₹980</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Pistachios" data-price="980">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+        <!-- Bestseller 4 -->
+        <div class="product-card featured">
+          <div class="product-badge">Popular</div>
+          <div class="product-img-wrap">
+            <img src="./assets/images/Dates.jpg" alt="Dates">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Premium Dates</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+              <span>(4.6)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="price">₹350</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Dates" data-price="350">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE HOMELY ============ -->
+  <section class="trust-section reveal">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Our Promise</span>
+        <h2 class="section-title">Why Choose Homely?</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3>100% Natural</h3>
+          <p>Pure, unadulterated dry fruits sourced directly from farms</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>No Additives</h3>
+          <p>Zero preservatives, zero colour — just pure natural goodness</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3>Free Delivery</h3>
+          <p>Free home delivery on orders above ₹500 across India</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon"><i class="fa-solid fa-award"></i></div>
+          <h3>Premium Quality</h3>
+          <p>Handpicked, carefully packed for freshness & taste</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ALL PRODUCTS ============ -->
+  <section class="products" id="products-section">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Collection</span>
+        <h2 class="section-title">All Products</h2>
+        <p class="section-desc">Explore our complete range of premium dry fruits, nuts & seeds</p>
+      </div>
+      <div class="product-grid reveal">
+
+        <!-- 1 Almonds -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/almonds.jpg" alt="Almonds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Almonds</h3>
+            <div class="product-price-row">
+              <span class="price">₹400</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Almonds" data-price="400">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 2 Cashews -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Cashews.jpg" alt="Cashews">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cashews</h3>
+            <div class="product-price-row">
+              <span class="price">₹820</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Cashews" data-price="820">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Raisins -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/raisins.jpg" alt="Raisins">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Raisins</h3>
+            <div class="product-price-row">
+              <span class="price">₹420</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Raisins" data-price="420">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Pistachios -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/pistachios.jpg" alt="Pistachios">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pistachios</h3>
+            <div class="product-price-row">
+              <span class="price">₹980</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Pistachios" data-price="980">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 5 Walnuts -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/walnuts.jpg" alt="Walnuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Walnuts</h3>
+            <div class="product-price-row">
+              <span class="price">₹680</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Walnuts" data-price="680">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 6 Dried Figs -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Driedfigs.jpg" alt="Dried Figs">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Dried Figs</h3>
+            <div class="product-price-row">
+              <span class="price">₹900</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Dried Figs" data-price="900">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 7 Dates -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Dates.jpg" alt="Dates">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Dates</h3>
+            <div class="product-price-row">
+              <span class="price">₹350</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Dates" data-price="350">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 8 Apricots -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Apricots.png" alt="Apricots">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Apricots</h3>
+            <div class="product-price-row">
+              <span class="price">₹850</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Apricots" data-price="850">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 9 Black Raisins -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/blackraisins.jpg" alt="Black Raisins">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Black Raisins</h3>
+            <div class="product-price-row">
+              <span class="price">₹480</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Raisins" data-price="480">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+        <!-- 10 Cranberries -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/cranberries.jpg" alt="Cranberries">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cranberries</h3>
+            <div class="product-price-row">
+              <span class="price">₹620</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Cranberries" data-price="620">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 11 Peanuts -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Peanuts.jpg" alt="Peanuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Peanuts</h3>
+            <div class="product-price-row">
+              <span class="price">₹220</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Peanuts" data-price="220">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 12 Hazelnuts -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Hazelnuts.jpg" alt="Hazelnuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Hazelnuts</h3>
+            <div class="product-price-row">
+              <span class="price">₹1100</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Hazelnuts" data-price="1100">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 13 Macadamia Nuts -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/MacadamiaNuts.jpg" alt="Macadamia Nuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Macadamia Nuts</h3>
+            <div class="product-price-row">
+              <span class="price">₹1400</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Macadamia Nuts" data-price="1400">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 14 Pine Nuts -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/pinenuts.jpg" alt="Pine Nuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pine Nuts</h3>
+            <div class="product-price-row">
+              <span class="price">₹1600</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Pine-Nuts" data-price="1600">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 15 Chia Seeds -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/ChiaSeeds.jpg" alt="Chia Seeds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Chia Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹320</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Chia Seeds" data-price="320">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 16 Flax Seeds -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/flax seeds.jpg" alt="Flax Seeds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Flax Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹280</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Flax Seeds" data-price="280">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 17 Pumpkin Seeds -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/pumpkins.jpg" alt="Pumpkin Seeds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pumpkin Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹420</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Pumpkin Seeds" data-price="420">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 18 Sunflower Seeds -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/sunflower-Seeds.jpg" alt="Sunflower Seeds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sunflower Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹300</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Sunflower-seeds" data-price="300">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 19 Makhana -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/makhana.jpg" alt="Makhana">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Makhana</h3>
+            <div class="product-price-row">
+              <span class="price">₹520</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Makhana" data-price="520">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 20 Roasted Foxnuts -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/roastedfoxnuts.jpg" alt="Roasted Foxnuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Roasted Foxnuts</h3>
+            <div class="product-price-row">
+              <span class="price">₹580</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Roasted-Foxnuts" data-price="580">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Dry Fruits ============ -->
+  <section class="products" id="products-section1">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Collection</span>
+        <h2 class="section-title">Dry Fruits</h2>
+        <p class="section-desc">Explore our complete range of premium dry fruits</p>
+      </div>
+      <div class="product-grid reveal">
+
+        <!-- 1 Raisins -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/raisins.jpg" alt="Raisins">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Raisins</h3>
+            <div class="product-price-row">
+              <span class="price">₹420</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Raisins" data-price="420">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 2 Dried Figs -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Driedfigs.jpg" alt="Dried Figs">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Dried Figs</h3>
+            <div class="product-price-row">
+              <span class="price">₹900</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Dried Figs" data-price="900">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Dates -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Dates.jpg" alt="Dates">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Dates</h3>
+            <div class="product-price-row">
+              <span class="price">₹350</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Dates" data-price="350">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Apricots -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/apricots.png" alt="Apricots">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Apricots</h3>
+            <div class="product-price-row">
+              <span class="price">₹850</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Apricots" data-price="850">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 5 Black Raisins -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/blackraisins.jpg" alt="Black Raisins">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Black Raisins</h3>
+            <div class="product-price-row">
+              <span class="price">₹480</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Raisins" data-price="480">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+        <!-- 6 Cranberries -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/cranberries.jpg" alt="Cranberries">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cranberries</h3>
+            <div class="product-price-row">
+              <span class="price">₹620</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Cranberries" data-price="620">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 7 Makhana -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/makhana.jpg" alt="Makhana">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Makhana</h3>
+            <div class="product-price-row">
+              <span class="price">₹520</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Makhana" data-price="520">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 7 DriedKiwi -->
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/DriedKiwi.jpg" alt="Dried Kiwi">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">DriedKiwi</h3>
+            <div class="product-price-row">
+              <span class="price">₹520</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Makhana" data-price="520">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===========Nuts  ============ -->
+  <section class="products" id="products-section2">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Collection</span>
+        <h2 class="section-title">Primium Nuts</h2>
+        <p class="section-desc">Explore our complete range of premium nuts</p>
+      </div>
+      <div class="product-grid reveal">
+
+        <!-- 1 Almonds -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/almonds.jpg" alt="Almonds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Almonds</h3>
+            <div class="product-price-row">
+              <span class="price">₹400</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Almonds" data-price="400">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 2 Cashews -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Cashews.jpg" alt="Cashews">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cashews</h3>
+            <div class="product-price-row">
+              <span class="price">₹820</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Cashews" data-price="820">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+
+
+        <!-- 3 Pistachios -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/pistachios.jpg" alt="Pistachios">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pistachios</h3>
+            <div class="product-price-row">
+              <span class="price">₹980</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Pistachios" data-price="980">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Walnuts -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/walnuts.jpg" alt="Walnuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Walnuts</h3>
+            <div class="product-price-row">
+              <span class="price">₹680</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Walnuts" data-price="680">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 5 Peanuts -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Peanuts.jpg" alt="Peanuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Peanuts</h3>
+            <div class="product-price-row">
+              <span class="price">₹220</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Peanuts" data-price="220">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 6 Hazelnuts -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Hazelnuts.jpg" alt="Hazelnuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Hazelnuts</h3>
+            <div class="product-price-row">
+              <span class="price">₹1100</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Hazelnuts" data-price="1100">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 7 Macadamia Nuts -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/MacadamiaNuts.jpg" alt="Macadamia Nuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Macadamia Nuts</h3>
+            <div class="product-price-row">
+              <span class="price">₹1400</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Macadamia Nuts" data-price="1400">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 8 Pine Nuts -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/pinenuts.jpg" alt="Pine Nuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pine Nuts</h3>
+            <div class="product-price-row">
+              <span class="price">₹1600</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Pine-Nuts" data-price="1600">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ seeds  ============ -->
+  <section class="products" id="products-section3">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Collection</span>
+        <h2 class="section-title">Primium Seeds</h2>
+        <p class="section-desc">Explore our complete range of premium seeds</p>
+      </div>
+      <div class="product-grid reveal">
+
+
+
+        <!-- 1 Chia Seeds -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/ChiaSeeds.jpg" alt="Chia Seeds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Chia Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹320</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Chia Seeds" data-price="320">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 2 Flax Seeds -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/flax seeds.jpg" alt="Flax Seeds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Flax Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹280</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Flax Seeds" data-price="280">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Pumpkin Seeds -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/pumpkins.jpg" alt="Pumpkin Seeds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pumpkin Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹420</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Pumpkin Seeds" data-price="420">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Sunflower Seeds -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/sunflower-Seeds.jpg" alt="Sunflower Seeds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sunflower Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹300</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Sunflower-seeds" data-price="300">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+
+        <!-- 5 Raw Lotus Seeds -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/RawLotusSeeds.png" alt="Roasted Foxnuts">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Raw Lotus Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹580</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Roasted-Foxnuts" data-price="580">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 6 Black Sesame Seeds -->
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/BlackSesameSeeds.jpg" alt="Chia Seeds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Black Sesame Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹320</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Chia Seeds" data-price="320">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 7 Watermelon Seeds -->
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/Watermelon-Seeds.jpg" alt="Chia Seeds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Watermelon Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹320</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Chia Seeds" data-price="320">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- 8 Muskmelon Seeds -->
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="./assets/images/MuskmelonSeeds.jpg" alt="Chia Seeds">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Muskmelon Seeds</h3>
+            <div class="product-price-row">
+              <span class="price">₹320</span>
+              <span class="price-unit">/ 500g</span>
+            </div>
+            <button class="add-to-cart" data-name="Chia Seeds" data-price="320">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="newsletter reveal">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <h2>Stay Fresh, Stay Updated!</h2>
+        <p>Subscribe to get exclusive offers, new launches & health tips delivered to your inbox.</p>
+      </div>
+      <form class="newsletter-form"
+        onsubmit="event.preventDefault(); this.querySelector('button').innerHTML='<i class=\'fa-solid fa-check\'></i> Subscribed!'; this.querySelector('button').style.background='#28a745';">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo Section -->
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="./assets/logo/mainlogo.png" alt="Homely Logo">
+          <h3>Homely</h3>
+        </div>
+        <p class="footer-tagline">Made it this far? You deserve a treat.<br>Get 10% off with code
+          <strong>SECRET</strong> at checkout.
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about-us.html">About Homely</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="franchiseopportunities.html">Franchise Opportunities</a></li>
+        </ul>
+      </div>
+
+      <!-- Categories -->
+      <div class="footer-section">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#products-section">All Products</a></li>
+          <li><a href="#bestsellers">Bestsellers</a></li>
+          <li><a href="#products-section1">Dry Fruits</a></li>
+          <li><a href="#products-section2">Premium Nuts</a></li>
+          <li><a href="#products-section3">Premium Seeds</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <div class="footer-contact">
+          <p><i class="fa-solid fa-phone"></i><a href="tel:+917387939219">7387939219</a></p>
+          <p><i class="fa-solid fa-envelope"></i><a href="mailto:aditya.wagh8470@gmail.com">aditya.wagh8470@gmail.com</a></p>
+          <p><i class="fa-solid fa-location-dot"></i>Homely Dry Fruits,<br>SM. VITA,<br>Mumbai JUHU - 400069</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>© 2026 Homely Dry Fruits | All Rights Reserved</p>
+      <p>Designed & Developed by <a href="https://kavyainfoweb.com/" target="_blank" rel="noopener">Aditya Wagh
+          Ltd.</a></p>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script src="./js/searchproduct.js"></script>
+  <script src="./js/addcart.js"></script>
+
+
+  <script>
+    /* ====== SIDEBAR TOGGLE ====== */
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+    }
+
+    /* ====== STICKY NAVBAR ====== */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    /* ====== HERO SLIDER ====== */
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+      slides.forEach((s, i) => {
+        s.classList.remove('active');
+        dots[i].classList.remove('active');
+      });
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() { showSlide(currentSlide + 1); }
+    function prevSlide() { showSlide(currentSlide - 1); }
+
+    function startSlider() {
+      slideInterval = setInterval(nextSlide, 4500);
+    }
+
+    function resetSlider() {
+      clearInterval(slideInterval);
+      startSlider();
+    }
+
+    // Dot click
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        showSlide(parseInt(dot.dataset.slide));
+        resetSlider();
+      });
+    });
+
+    // Arrow click
+    document.querySelector('.hero-prev').addEventListener('click', () => { prevSlide(); resetSlider(); });
+    document.querySelector('.hero-next').addEventListener('click', () => { nextSlide(); resetSlider(); });
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    const heroEl = document.getElementById('hero');
+    heroEl.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    heroEl.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) {
+        diff > 0 ? nextSlide() : prevSlide();
+        resetSlider();
+      }
+    }, { passive: true });
+
+    startSlider();
+
+    /* ====== SCROLL REVEAL ANIMATIONS ====== */
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    /* ====== SMOOTH SCROLL ====== */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // close mobile sidebar if open
+          const sidebar = document.getElementById('sidebar');
+          if (sidebar.classList.contains('active')) toggleMenu();
+        }
+      });
+    });
+
+    /* ====== TOAST NOTIFICATION (replace alert) ====== */
+    function showToast(message) {
+      const existing = document.querySelector('.toast');
+      if (existing) existing.remove();
+
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `<i class="fa-solid fa-check-circle"></i> ${message}`;
+      document.body.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => toast.remove(), 400);
+        }, 2500);
+      });
+    }
+
+    // Override addcart alert with toast
+    const cartButtons = document.querySelectorAll('.add-to-cart');
+    cartButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const name = this.dataset.name;
+        const basePrice = parseFloat(this.dataset.price);
+        const card = this.closest('.product-card');
+        const image = card.querySelector('img').src;
+        const size = 500;
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existing = cart.find(item => item.name === name && item.size === size);
+
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ name, basePrice, image, size, qty: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update cart count
+        const count = cart.reduce((sum, item) => sum + item.qty, 0);
+        const span = document.getElementById('cart-count');
+        if (span) {
+          span.innerText = count;
+          span.classList.add('bump');
+          setTimeout(() => span.classList.remove('bump'), 300);
+        }
+
+        // Animate button
+        this.innerHTML = '<i class="fa-solid fa-check"></i> Added!';
+        this.classList.add('added');
+        setTimeout(() => {
+          this.innerHTML = '<i class="fa-solid fa-bag-shopping"></i> Add to Cart';
+          this.classList.remove('added');
+        }, 1800);
+
+        showToast(`${name} added to cart!`);
+      });
+    });
+
+    // Init cart count on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      const span = document.getElementById('cart-count');
+      if (span) span.innerText = count;
+    });
+  </script>
+
+
+  <!-- ============ CHATBOT ============ -->
+
+  <!-- Chat Button -->
+  <div class="chatbot-toggle" onclick="toggleChat()">
+    <i class="fa-solid fa-comments"></i>
+  </div>
+
+  <!-- Chat Window -->
+  <div class="chatbot-container" id="chatbot">
+    <div class="chat-header">Homely Assistant</div>
+
+    <div class="chat-body" id="chat-body">
+      <p><b>Bot:</b> Hi 👋 Ask me about our products!</p>
+    </div>
+
+    <!-- Quick Products -->
+    <div class="quick-products">
+      <button onclick="askProduct('Almonds')">Almonds</button>
+      <button onclick="askProduct('Cashews')">Cashews</button>
+      <button onclick="askProduct('Raisins')">Raisins</button>
+      <button onclick="askProduct('Pistachios')">Pistachios</button>
+      <button onclick="askProduct('Walnuts')">Walnuts</button>
+      <button onclick="askProduct('Dried Figs')">Dried Figs</button>
+      <button onclick="askProduct('Dates')">Dates</button>
+      <button onclick="askProduct('Apricots')">Apricots</button>
+      <button onclick="askProduct('Cranberries')">Cranberries</button>
+      <button onclick="askProduct('Hazelnuts')">Hazelnuts</button>
+      <button onclick="askProduct('Macadamia Nuts')">Macadamia Nuts</button>
+      <button onclick="askProduct('Chia Seeds')">Chia Seeds</button>
+      <button onclick="askProduct('Flax Seeds')">Flax Seeds</button>
+      <button onclick="askProduct('Pumpkin Seeds')">Pumpkin Seeds</button>
+      <button onclick="askProduct('Sunflower Seeds')">Sunflower Seeds</button>
+      <button onclick="askProduct('Makhana')">Makhana</button>
+    </div>
+
+    <!-- Chat Input -->
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Ask something..." />
+
+      <button onclick="sendMessage()">Send</button>
     </div>
   </div>
 
-  <!-- Footer Bottom  copy right and company name section-->
+  <script src="./js/chatbot.js"></script>
 
-    <div class="footer-bottom">
-    <p>© 2026 Homely Dry Fruits | All Rights Reserved</p>
-     <p> Designed & Developed by<a href="https://kavyainfoweb.com/" target="_blank" rel="noopener"> Kavya Infoweb Pvt Ltd.</a></p>
-  </div>
-</footer>
-   <!--js for Search fruits-->
-   
-<script src="./js/searchproduct.js"></script>
-<script src="./js/addcart.js"></script>
 </body>
+
 </html>

@@ -6,42 +6,242 @@
     <title>footer</title>
 </head>
 <body>
-    <footer class="footer">
-  <div class="footer-container">
-    <!-- Left Section logo -->
-    <div class="footer-section">
-      <div class="logo">
-        <img src="./assets/logo.png/logo.png" alt="">
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo Section -->
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="./assets/logo/mainlogo.png" alt="Homely Logo">
+          <h3>Homely</h3>
+        </div>
+        <p class="footer-tagline">Made it this far? You deserve a treat.<br>Get 10% off with code
+          <strong>SECRET</strong> at checkout.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about-us.html">About Homely</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="franchiseopportunities.html">Franchise Opportunities</a></li>
+         
+        </ul>
+      </div>
+
+      <!-- Categories -->
+      <div class="footer-section">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#products-section">All Products</a></li>
+          <li><a href="#bestsellers">Bestsellers</a></li>
+          <li><a href="#categories">Dry Fruits</a></li>
+          <li><a href="#categories">Premium Nuts</a></li>
+          <li><a href="#categories">Primium Seeds</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <div class="footer-contact">
+          <p><i class="fa-solid fa-phone"></i><a href="tel:+917387939219">7387939219</a></p>
+          <p><i class="fa-solid fa-envelope"></i><a href="mailto:aditya.wagh8470@gmail.com">aditya.wagh8470@gmail.com</a></p>
+          <p><i class="fa-solid fa-location-dot"></i>Homely Dry Fruits,<br>MG Road, SM.Vita ,<br>Mumbai - 400069</p>
+        </div>
       </div>
     </div>
 
-    <!-- Quick Links -->
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <li><a href="about-us.html" target="_blank">About Homely</a></li> 
-        <li><a href="faq.html" target="_blank">FAQ</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact -->
-     <div class="footer-section">
-     <h4>Contact Us</h4>
-     <p>📞<a href="tel:+918007089092">8007089092</a></p>
-     <p>✉️<a href="mailto:homely@gmail.com">homely@gmail.com</a></p>
-     </div>
-
-     <!-- Address -->
-     <div class="footer-section">
-      <h4>Shop Address</h4>
-      <p>Homely Dry Fruits,<br>MG Road,Andheri East Mumbai- 400069.</p>
-    </div>
-  </div>
-
-  <!-- Footer Bottom  copy right and company name section-->
+    <!-- Footer Bottom -->
     <div class="footer-bottom">
-    <p>© 2026 Homely Dry Fruits | All Rights Reserved</p>
-     <p> Designed & Developed by<a href="https://kavyainfoweb.com/" target="_blank" rel="noopener"> Kavya Infoweb Pvt Ltd.</a></p>
-  </div>
-</footer>
+      <p>© 2026 Homely Dry Fruits | All Rights Reserved</p>
+      <p>Designed & Developed by <a href="https://kavyainfoweb.com/" target="_blank" rel="noopener">Aditya Wagh
+          Ltd.</a></p>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script src="./js/searchproduct.js"></script>
+  <script src="./js/addcart.js"></script>
+
+  <script>
+    /* ====== SIDEBAR TOGGLE ====== */
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+    }
+
+    /* ====== STICKY NAVBAR ====== */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    /* ====== HERO SLIDER ====== */
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+      slides.forEach((s, i) => {
+        s.classList.remove('active');
+        dots[i].classList.remove('active');
+      });
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() { showSlide(currentSlide + 1); }
+    function prevSlide() { showSlide(currentSlide - 1); }
+
+    function startSlider() {
+      slideInterval = setInterval(nextSlide, 4500);
+    }
+
+    function resetSlider() {
+      clearInterval(slideInterval);
+      startSlider();
+    }
+
+    // Dot click
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        showSlide(parseInt(dot.dataset.slide));
+        resetSlider();
+      });
+    });
+
+    // Arrow click
+    document.querySelector('.hero-prev').addEventListener('click', () => { prevSlide(); resetSlider(); });
+    document.querySelector('.hero-next').addEventListener('click', () => { nextSlide(); resetSlider(); });
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    const heroEl = document.getElementById('hero');
+    heroEl.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    heroEl.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) {
+        diff > 0 ? nextSlide() : prevSlide();
+        resetSlider();
+      }
+    }, { passive: true });
+
+    startSlider();
+
+    /* ====== SCROLL REVEAL ANIMATIONS ====== */
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    /* ====== SMOOTH SCROLL ====== */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // close mobile sidebar if open
+          const sidebar = document.getElementById('sidebar');
+          if (sidebar.classList.contains('active')) toggleMenu();
+        }
+      });
+    });
+
+    /* ====== TOAST NOTIFICATION (replace alert) ====== */
+    function showToast(message) {
+      const existing = document.querySelector('.toast');
+      if (existing) existing.remove();
+
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `<i class="fa-solid fa-check-circle"></i> ${message}`;
+      document.body.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => toast.remove(), 400);
+        }, 2500);
+      });
+    }
+
+    // Override addcart alert with toast
+    const cartButtons = document.querySelectorAll('.add-to-cart');
+    cartButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const name = this.dataset.name;
+        const basePrice = parseFloat(this.dataset.price);
+        const card = this.closest('.product-card');
+        const image = card.querySelector('img').src;
+        const size = 500;
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existing = cart.find(item => item.name === name && item.size === size);
+
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ name, basePrice, image, size, qty: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update cart count
+        const count = cart.reduce((sum, item) => sum + item.qty, 0);
+        const span = document.getElementById('cart-count');
+        if (span) {
+          span.innerText = count;
+          span.classList.add('bump');
+          setTimeout(() => span.classList.remove('bump'), 300);
+        }
+
+        // Animate button
+        this.innerHTML = '<i class="fa-solid fa-check"></i> Added!';
+        this.classList.add('added');
+        setTimeout(() => {
+          this.innerHTML = '<i class="fa-solid fa-bag-shopping"></i> Add to Cart';
+          this.classList.remove('added');
+        }, 1800);
+
+        showToast(`${name} added to cart!`);
+      });
+    });
+
+    // Init cart count on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      const span = document.getElementById('cart-count');
+      if (span) span.innerText = count;
+    });
+  </script>
+
 </body>
+
 </html>

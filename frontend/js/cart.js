@@ -27,14 +27,13 @@ function renderCart() {
       </div>
       <div class="col-md-3">
         <strong>${item.name}</strong><br>
-        ₹${itemPrice.toFixed(2)} / ${item.size}g
+        ₹${itemPrice.toFixed(1)} / ${item.size}g
       </div>
       <div class="col-md-2">
-        <input type="number" min="1" value="${item.qty}" 
-          class="form-control qty" data-index="${index}">
+        <input type="number" value="1" class="form-control" readonly>
       </div>
       <div class="col-md-2">
-        <strong>₹${itemTotal.toFixed(2)}</strong>
+        <strong>₹${itemTotal.toFixed(1)}</strong>
       </div>
       <div class="col-md-2">
         <select class="form-select size" data-index="${index}">
@@ -55,8 +54,8 @@ function renderCart() {
   });
 
  
-  cartTotalSpan.innerText = `₹${total.toFixed(2)}`;
-localStorage.setItem("price", total.toFixed(2)); // ✅ ADD THIS
+  cartTotalSpan.innerText = `₹${total.toFixed(1)}`;
+localStorage.setItem("price", total.toFixed(1)); 
 
 
   // Quantity change
@@ -89,36 +88,12 @@ localStorage.setItem("price", total.toFixed(2)); // ✅ ADD THIS
 
 renderCart();
 
-
-
-
-function addToCart(itemId) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push(itemId); // or store quantity & item details
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    updateCartCount();
-}
-
-
-// ... inside renderCart() function ...
-
-// Update Quantity
-document.querySelectorAll(".qty").forEach(input => {
-  input.addEventListener("change", e => {
-    cart[e.target.dataset.index].qty = parseInt(e.target.value) || 1;
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
-    updateCartCount(); // ✅ Add this
-  });
-});
-
 // Remove Item
 document.querySelectorAll(".remove").forEach(btn => {
   btn.addEventListener("click", e => {
     cart.splice(e.target.dataset.index, 1);
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCart();
-    updateCartCount(); // ✅ Add this
+    updateCartCount(); 
   });
 });

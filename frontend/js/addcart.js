@@ -17,6 +17,7 @@ const addButtons = document.querySelectorAll(".add-to-cart");
 
 addButtons.forEach(btn => {
   btn.addEventListener("click", () => {
+
     const name = btn.dataset.name;
     const basePrice = parseFloat(btn.dataset.price);
     const card = btn.closest(".product-card");
@@ -25,23 +26,27 @@ addButtons.forEach(btn => {
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    const existing = cart.find(item => item.name === name && item.size === size);
+    const existing = cart.find(item =>
+      item.name === name && item.size === size
+    );
 
     if (existing) {
-      existing.qty += 1;
-    } else {
-      cart.push({ name, basePrice, image, size, qty: 1 });
+      alert("Product already added to cart!");
+      return;  
     }
 
+    cart.push({
+      name,
+      basePrice,
+      image,
+      size,
+      qty
+    });
+
     localStorage.setItem("cart", JSON.stringify(cart));
-    
-    // Call the UI update
-    updateCartUI();
-    
-    alert(`${name} added to cart!`);
+    updateCartCount();
   });
 });
-
 // 3. Initialize on page load
 document.addEventListener("DOMContentLoaded", updateCartUI);
 

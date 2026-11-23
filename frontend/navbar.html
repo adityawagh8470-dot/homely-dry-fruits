@@ -3,32 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Navbar</title>
+  <link rel="icon" type="image/png" sizes="35x35" href="./assets/logo/mainlogo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
     
-<nav class="navbar">
-  <div class="nav-left">
-    <h2><b>Homely</b></h2>
-  </div>
-
-  <!-- 2 Search fruits-->
-   <div class="nav-center">
-    <input type="text" id="searchInput" placeholder="Search dry fruits...">
-   </div>
-
-   <!-- 3 right element login & logout buttons-->
-
-   <div class="nav-right">
-   <button class="nav-btn login-btn" onclick="window.location.href='login.html'">Login / Signup</button>
+  <!-- ============ ANNOUNCEMENT BAR ============ -->
+  <div class="announcement-bar">
+    <div class="announcement-track">
+      <span>🎉 Get 10% Discount on Purchase of ₹899 and Above With Code "SECRET" &nbsp; ◆ &nbsp;</span>
+      <span>🚚 Free Delivery on Orders Above ₹500 &nbsp; ◆ &nbsp;</span>
+      <span>🌿 100% Natural & Fresh Dry Fruits &nbsp; ◆ &nbsp;</span>
+      <span>🎉 Get 10% Discount on Purchase of ₹899 and Above With Code "SECRET" &nbsp; ◆ &nbsp;</span>
+      <span>🚚 Free Delivery on Orders Above ₹500 &nbsp; ◆ &nbsp;</span>
+      <span>🌿 100% Natural & Fresh Dry Fruits &nbsp; ◆ &nbsp;</span>
     </div>
-     <!--right Cart icon and cart count-->
-   <div class="cart-container">
-  <a href="cart.html" class="cart-link">
-    <i class="fa fa-shopping-cart" id="cart-icon"></i>  
-    <span id="cart-count">0</span>
-  </a>
   </div>
-    </nav>
+
+  <!-- NAVIGATION BAR  -->
+  <nav class="navbar" id="navbar">
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="./assets/logo/mainlogo.png" alt="Homely Logo" class="logo-img">
+      <span class="logo-text">Homely</span>
+    </a>
+
+    <!-- Nav Links (Desktop) -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#bestsellers">Bestsellers</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#products-section">All Products</a></li>
+      <li><a href="franchiseopportunities.html">Franchise</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+    </ul>
+
+    <!-- Search -->
+    <div class="nav-search">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="searchInput" placeholder="What are you looking for?">
+    </div>
+
+    <!-- Right Icons -->
+     <div class="nav-actions">
+      <a href="login.html" class="nav-action-btn" title="Account">
+        <i class="fa-regular fa-user"></i>
+      </a>
+      <a href="cart.html" class="nav-action-btn cart-btn" title="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge" id="cart-count">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- MOBILE SIDEBAR -->
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="./assets/logo/mainlogo.png" alt="Homely" class="sidebar-logo">
+      <span class="close-btn" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></span>
+    </div>
+    <div class="sidebar-links">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="#bestsellers"><i class="fa-solid fa-fire"></i> Bestsellers</a>
+      <a href="#categories"><i class="fa-solid fa-grid"></i> Categories</a>
+      <a href="#products-section"><i class="fa-solid fa-leaf"></i> All Products</a>
+      <a href="franchiseopportunities.html"><i class="fa-solid fa-handshake"></i> Franchise</a>
+      <a href="about-us.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+      <a href="login.html"><i class="fa-regular fa-user"></i> Login / Sign Up</a>
+      <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i> My Cart</a>
+      <a href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+    </div>
+  </div>
+
+<!--nav bar end -->
 </body>
 </html>

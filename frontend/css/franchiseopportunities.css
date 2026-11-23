@@ -1,0 +1,300 @@
+/* =====================================
+   PROFESSIONAL FRANCHISE PAGE STYLING
+===================================== */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8faf8;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* =====================================
+   COMMON SECTION STYLE
+===================================== */
+.section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1b5e20;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section h2::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: #2e7d32;
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 4px;
+}
+
+/* =====================================
+   HERO SECTION
+===================================== */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 180px 20px;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 750px;
+    margin: auto;
+    opacity: 0.95;
+}
+
+/* =====================================
+   ABOUT SECTION
+===================================== */
+.about p {
+    max-width: 850px;
+    margin: 15px auto;
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+/* =====================================
+   STORE IMAGE
+===================================== */
+.store img {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    transition: all 0.4s ease;
+}
+
+.store img:hover {
+    transform: scale(1.03);
+}
+
+/* =====================================
+   TIMELINE CARDS
+===================================== */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+.card {
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border-top: 6px solid #2e7d32;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.card ul {
+    padding-left: 20px;
+    color: #555;
+}
+
+/* =====================================
+   INVESTMENT SECTION
+===================================== */
+.investment-section {
+    padding: 140px 20px;
+    background: linear-gradient(135deg, #f1f8f2, #ffffff);
+    text-align: center;
+}
+
+.investment-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1b5e20;
+}
+
+.investment-section .sub {
+    margin-top: 10px;
+    color: #666;
+    font-size: 18px;
+}
+
+.investment-cards {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.investment-card {
+    background: #ffffff;
+    padding: 45px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+}
+
+.investment-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.investment-card i {
+    font-size: 40px;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.investment-card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.investment-card p {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1b5e20;
+}
+
+/* TOTAL BOX */
+.investment-total {
+    margin-top: 70px;
+    padding: 50px;
+    background: #2e7d32;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+.investment-total h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.investment-total span {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+/* =====================================
+   FORM SECTION
+===================================== */
+.form-section {
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #e8f5e9, #f4faf4);
+}
+
+.form-section h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 50px;
+    color: #1b5e20;
+    font-weight: 700;
+}
+
+form {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 55px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2e7d32;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46,125,50,0.15);
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #1b5e20;
+    transform: translateY(-3px);
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 120px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    form {
+        padding: 35px;
+    }
+}

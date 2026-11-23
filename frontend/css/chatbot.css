@@ -1,0 +1,141 @@
+/* CHAT BUTTON */
+
+.chatbot-toggle{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+background:#4CAF50;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+cursor:pointer;
+box-shadow:0 6px 20px rgba(0,0,0,0.3);
+z-index:9999;
+}
+
+
+/* CHAT WINDOW */
+
+.chatbot-container{
+
+position:fixed;
+bottom:95px;
+right:25px;
+width:340px;
+height:430px;
+
+background:white;
+border-radius:12px;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.3);
+
+display:none;
+flex-direction:column;
+
+overflow:hidden;
+
+z-index:9999;
+
+}
+
+
+/* HEADER */
+
+.chat-header{
+
+background:#4CAF50;
+color:white;
+
+padding:12px;
+font-weight:600;
+
+}
+
+
+/* BODY */
+
+.chat-body{
+
+flex:1;
+
+overflow-y:auto;
+
+padding:10px;
+
+font-size:14px;
+
+}
+
+
+/* QUICK BUTTONS */
+
+.quick-products{
+
+padding:10px;
+
+display:flex;
+flex-wrap:wrap;
+
+gap:6px;
+
+border-top:1px solid #eee;
+
+}
+
+.quick-products button{
+
+background:#e8f5e9;
+
+border:none;
+
+padding:5px 8px;
+
+font-size:12px;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+
+/* INPUT */
+
+.chat-input{
+
+display:flex;
+
+border-top:1px solid #eee;
+
+}
+
+.chat-input input{
+
+flex:1;
+
+padding:10px;
+
+border:none;
+
+outline:none;
+
+}
+
+.chat-input button{
+
+background:#4CAF50;
+
+color:white;
+
+border:none;
+
+padding:10px 15px;
+
+cursor:pointer;
+
+}

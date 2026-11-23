@@ -22,6 +22,9 @@ urlpatterns = [
 
     # 🔥 ADMIN PANEL ROUTES
     path("api/admin/", include("admin_api.urls")),
+
+    # CHATBOT
+    path('api/chatbot/', include('chatbot.urls')),
 ]
 
 
