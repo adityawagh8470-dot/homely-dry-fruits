@@ -325,9 +325,3 @@ This project demonstrates:
 * Database integration
 * Cloud storage integration
 * Deployment process
-
----
-
-# 📄 License
-
-This project is developed for educational purposes.
